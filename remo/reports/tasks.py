@@ -122,7 +122,7 @@ def zero_current_streak():
         rep.userprofile.save()
 
 
-@periodic_task(run_every=timedelta(days=1))
+@periodic_task(run_every=timedelta(days=1), name='calculate_longest_streaks')
 def calculate_longest_streaks():
     """Calculate user's longest streaks."""
     from remo.reports.models import NGReport
